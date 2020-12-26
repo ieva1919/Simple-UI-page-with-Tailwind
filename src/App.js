@@ -69,18 +69,28 @@ function App() {
                       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
                   </div>
-                  <div className="flex-auto overflow-y-auto p-5 space-y-4">
-                  <img src="/image/background.jpg" alt="background" style={{ width: '100%' }} />
-                  { [...Array(10)].map(() => (
-                    <div className="flex flex-row space-x-2">
-                      <svg className="flex-none w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
-                      <div className="flex flex-col">
-                        <div className="bg-gray-200 rounded p-5">
-                          Some message text
+                  <div className="flex-auto overflow-y-auto p-5 space-y-4 bg-no-repeat bg-cover" style={{ backgroundImage: 'url(/image/background.jpg)' }}>
+                  { [...Array(10)].map((x, i) => (
+                    i % 2 ?
+                      <div className="flex flex-row space-x-2">
+                        <svg className="flex-none w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
+                        <div className="flex flex-col">
+                          <div className="bg-gray-200 rounded p-5">
+                            Some message text
+                          </div>
+                          <div className="text-sm text-black">5hr ago</div>
                         </div>
-                        <div className="text-sm text-gray-500">5hr ago</div>
-                       </div>
-                    </div>
+                      </div>
+                      :
+                      <div className="flex flex-row-reverse space-x-2">
+                        <svg className="flex-none w-6 h-6 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
+                        <div className="flex flex-col">
+                          <div className="bg-gray-200 rounded p-5">
+                            Some message text 2
+                          </div>
+                          <div className="text-sm text-black flex flex-row-reverse">5hr ago</div>
+                        </div>
+                      </div>
                      )) }
                   </div>
                   <div className="flex-none h-40 p-4 pt-0">
